@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-app": "node scripts/create.js",
-    "build": "",
-    "deploy": "clasp push" 
+    "build": "webpack",
+    "deploy": "clasp push"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,15 @@
   "homepage": "https://github.com/ikalachy/crux-reporter#readme",
   "devDependencies": {
     "@google/clasp": "^2.3.0",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-spawn": "^6.0.5",
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "inquirer": "^5.0.0",
+    "brace-expansion": "^1.1.11",
     "cross-spawn": "^6.0.5",
-    "dotenv": "^8.0.0"
+    "inquirer": "^5.0.0"
   }
 }

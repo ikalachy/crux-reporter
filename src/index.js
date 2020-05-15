@@ -136,7 +136,7 @@ function runQuery() {
 // millis per day for previous month calculation
 var MILLIS_PER_DAY = 1000 * 60 * 60 * 24;
 
-
+// prefix for use in query e.g. '202004' for April
 var table_prefix = Utilities.formatDate(new Date(new Date().getTime() - 19 * MILLIS_PER_DAY), 'GMT', 'yyyyMM');
 //var noon = new Date(noonString);
 
