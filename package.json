@@ -1,0 +1,39 @@
+{
+  "name": "crux-report",
+  "version": "1.0.0",
+  "description": "CRUX report automation tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-app": "node scripts/create.js",
+    "build": "",
+    "deploy": "clasp push" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikalachy/crux-reporter.git"
+  },
+  "keywords": [
+    "CRUX",
+    "google",
+    "performance",
+    "UI",
+    "metrics"
+  ],
+  "author": "Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikalachy/crux-reporter/issues"
+  },
+  "homepage": "https://github.com/ikalachy/crux-reporter#readme",
+  "devDependencies": {
+    "@google/clasp": "^2.3.0",
+    "cross-spawn": "^6.0.5",
+    "dotenv": "^8.0.0"
+  },
+  "dependencies": {
+    "inquirer": "^5.0.0",
+    "cross-spawn": "^6.0.5",
+    "dotenv": "^8.0.0"
+  }
+}
