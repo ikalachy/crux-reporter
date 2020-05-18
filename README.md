@@ -1,6 +1,7 @@
 # crux-reporter
 CRUX report automation tool
 
+![Image description](https://drive.google.com/file/d/1q8Xz2taIBhvCCJ7aPROByQBoAWGHmCB4/view?usp=sharing)
 
 
 # Installation 
@@ -19,3 +20,4 @@ yarn run create-app "<script title>" "<spreadsheet id>"
 ```
 # yarn run deploy
 ```
+https://app.lucidchart.com/documents/view/f7a19ac9-5197-4435-bb5f-dd71f620dfdf
