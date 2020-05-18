@@ -1,7 +1,26 @@
 # crux-reporter
 
+
 ![CRUX report automation tool](https://raw.githubusercontent.com/ikalachy/crux-reporter/master/img/CRUX%20Automation.jpeg)
 
+## Requirements
+
+- Node.js
+  - This script is written by Node.js
+- [Yarn](https://yarnpkg.com/)
+  - package manager
+  - This repository is managed by Yarn
+- Google Account
+  - Need to login with [clasp](https://github.com/google/clasp).
+  - `crux-reporter` is a Google Apps Script.
+- Google Spreadsheet
+  - `crux-reporter` record the result of CRUX dataset query to Google Spreadsheet
+  - we use Bigquery to get result from CRUX dataset 
+- GCP project ID
+  - we use CRUX dataset and bigquery 
+  - we need to do it in scope of GCP project hence project id is required 
+- Google datastudio
+  - in case we want to visualize data
 
 # Installation 
 
