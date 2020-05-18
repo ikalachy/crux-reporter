@@ -1,7 +1,6 @@
 # crux-reporter
-CRUX report automation tool
 
-![Image description](https://drive.google.com/file/d/1q8Xz2taIBhvCCJ7aPROByQBoAWGHmCB4/view?usp=sharing)
+![CRUX report automation tool](https://raw.githubusercontent.com/ikalachy/crux-reporter/master/img/CRUX%20Automation.jpeg)
 
 
 # Installation 
