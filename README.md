@@ -6,6 +6,10 @@ CRUX report automation tool
 
 # Installation 
 
+```
+yarn install
+```
+
 1. yarn clasp login
 2. Run following command:
 
