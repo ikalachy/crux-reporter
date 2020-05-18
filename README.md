@@ -12,7 +12,7 @@ yarn install
 
 1. yarn clasp login
 
-`clasp` allows you to develop your Apps Script projects locally. That means you can check-in your code into source control, collaborate with other developers, and use your favorite tools to develop Apps Script.
+>  `clasp` allows you to develop your Apps Script projects locally. That means you can check-in your code into source control, collaborate with other developers, and use your favorite tools to develop Apps Script.
 
 2. Create app holder for the script and sheet as a data storage Run following command:
 
