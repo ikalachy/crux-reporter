@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-app": "node scripts/create.js",
     "build": "webpack",
-    "deploy": "clasp push"
+    "deploy": "clasp pushnpm "
   },
   "repository": {
     "type": "git",
@@ -31,12 +31,15 @@
     "copy-webpack-plugin": "^5.1.1",
     "cross-spawn": "^6.0.5",
     "dotenv": "^8.0.0",
+    "nconf": "^0.10.0",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "brace-expansion": "^1.1.11",
     "cross-spawn": "^6.0.5",
-    "inquirer": "^5.0.0"
+    "inquirer": "^5.0.0",
+    "nconf": "^0.10.0"
   }
 }

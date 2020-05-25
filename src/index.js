@@ -1,6 +1,58 @@
 
-var projectId = 'crux-report-268618';
-var sheetName = "fcp-fid-all-countries-competitors";
+const config = require('./config');
+
+
+var projectId = config.get('GCLOUD_PROJECT');
+var sheetName = config.get('SPREADSHEET_NAME' );
+
+
+/*
+  Test charts 
+*/
+function sendCRUXNotification(imageUrl){
+
+  //
+  //var imageUrl = chartCRUX();
+  
+ payload.sections[0].images[0].image = imageUrl;
+  // Because payload is a JavaScript object, it is interpreted as
+  // as form data. (No need to specify contentType; it automatically
+  // defaults to either 'application/x-www-form-urlencoded'
+  // or 'multipart/form-data')
+  var options = {
+    "method" : "post",
+    "contentType": "application/json", 
+    "payload" : JSON.stringify(payload),
+    "muteHttpExceptions": false 
+  };
+  
+  var chuckNorrisObject = JSON.stringify(options);
+  Logger.log('Send CRUX Notification');
+  var response = UrlFetchApp.fetch(config.get('TEAMS_WEBHOOK'), options);
+  //Logger.log(response.getContentText());
+}
+
+
+function chartCRUX(){
+
+
+    var html = HtmlService.createTemplateFromFile("chart").evaluate();
+    html.setTitle("Dynamic Webpage");
+
+    var imageData = Utilities.base64Encode(html.getAs('application/pdf').getBytes());
+    var imageUrl = "data:image/png;base64," + encodeURI(imageData);
+    
+    return imageUrl;
+    //return  htmlOutput.append("<img border=\"1\" src=\"" + imageUrl + "\">");
+
+
+}
+
+function doGet() {
+  var html = HtmlService.createTemplateFromFile("chart").evaluate();
+  html.setTitle("Dynamic Webpage");
+  return html;
+}
 
 
 /**
@@ -39,23 +91,12 @@ function initOrUpdateColumnTitles(headers) {
 
 }
 
-
-function convertQueryResultsToRows(result) {
-    return this.generateResultMapping().map(map => {
-        return map.value(result)
-    })
-}
-
-
 /**
 * Runs a BigQuery query and logs the results in a spreadsheet.
 */
 function runQuery() {
     // Replace this value with the project ID listed in the Google
     // Cloud Platform project.
-
-
-
     var request = {
         query: CRUX_QUERY
     };
@@ -136,7 +177,7 @@ function runQuery() {
 // millis per day for previous month calculation
 var MILLIS_PER_DAY = 1000 * 60 * 60 * 24;
 
-// prefix for use in query e.g. '202004' for April
+
 var table_prefix = Utilities.formatDate(new Date(new Date().getTime() - 19 * MILLIS_PER_DAY), 'GMT', 'yyyyMM');
 //var noon = new Date(noonString);
 
@@ -233,3 +274,46 @@ var CRUX_QUERY =
     `      FROM FCPs join FIDs ON FCPs.yyyymm = FIDs.yyyymm AND` +
     `                             FCPs.origin = FIDs.origin AND` +
     `                             FCPs.fcp_device = FIDs.fid_device;`;
+    
+    
+    
+var payload = {
+	"@type": "MessageCard",
+	"@context": "https://schema.org/extensions",
+	"summary": "2 new Yammer posts",
+	"themeColor": "0078D7",
+	"sections": [
+		{
+			"activityImage": "https://user-images.githubusercontent.com/1120896/55263154-74aa0a80-5246-11e9-96c3-5741f798f3aa.png",
+			"images": [{
+	                "image": "https://user-images.githubusercontent.com/1120896/55263154-74aa0a80-5246-11e9-96c3-5741f798f3aa.png",
+	                "title": "ffff"
+	         }],
+			"activityTitle": "CRUXer",
+			"activitySubtitle": "right now",
+			"facts": [
+				{
+					"name": "Month:",
+					"value": "April,15"
+				},
+				{
+					"name": "Origin:",
+					"value": "se.com"
+				}
+			],
+			"text": "Hi CrUX users, This is your monthly announcement that the latest dataset has been published to BigQuery!",
+                        "heroImage": {
+                "image": "https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png"
+            },
+			"potentialAction": [
+				{
+					"@type": "OpenUri",
+					"name": "View se.com report ",
+                    "targets": [
+                        { "os": "default", "uri": "https://datastudio.google.com/reporting/ec2947ce-efe2-46da-8551-7c67b28ca14f" }
+                    ]
+				}
+			]
+ 	}
+	]
+};

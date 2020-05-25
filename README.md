@@ -47,3 +47,5 @@ yarn run create-app "<script title>" "<spreadsheet id>"
 # yarn run deploy
 ```
 
+
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst
