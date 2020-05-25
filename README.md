@@ -43,10 +43,11 @@ yarn run create-app "<script title>" "<spreadsheet id>"
 
 3. Open `/src/index.js` and change *sheetName* and *projectId* properties 
 
-4. Deploy the `crux-demo` script to your Google Apps Script: `yarn run deploy`
+4. Deploy the `crux-demo` script to your Google Apps Script: e.g.
 
 ```
 # yarn run deploy
 ```
+
 
 
