@@ -24,7 +24,7 @@
 
 # Installation 
 
-Install all dependencies 
+0. Install all dependencies 
 ```
 yarn install
 ```
@@ -41,9 +41,12 @@ yarn run create-app "<script title>" "<spreadsheet id>"
 # yarn run create-app "crux-demo" "1tgVIzqVo1QdKbW7beY5UVEoXmNjxNyiwqCMktCjcRyc"
 ```
 
-3. Deploy the `crux-demo` script to your Google Apps Script: `yarn run deploy`
+3. Open `/src/index.js` and change *sheetName* and *projectId* properties 
+
+4. Deploy the `crux-demo` script to your Google Apps Script: `yarn run deploy`
 
 ```
 # yarn run deploy
 ```
+
 
